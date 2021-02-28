@@ -1,0 +1,4 @@
+numpy
+pandas
+cryptoxlib-aio
+scipy

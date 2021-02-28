@@ -2,6 +2,12 @@ name: ForexMATrader
 version: 1.0.0
 buildversion: 1
 agents:
+  highly_volatile_assets_select_agent:
+    name: HighlyVolatileAssetsPickerAgent
+    code: agent/analyser/highly_volatile_assets_select_agent.py
+  pick_trading_assets_agent:
+    name: PickTradingAssetAgent
+    code: agent/analyser/pick_trading_assets_agent.py
   market_status_reading_agent:
     name: MarketStatusReadingAgent
     code: agent/source_reader/market_status_reading_agent.py
