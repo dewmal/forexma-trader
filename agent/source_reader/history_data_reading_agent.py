@@ -13,6 +13,7 @@ class HistoryDataReadingAgent:
 
     async def execute(self, *args, **kwargs):
         df = pd.read_csv("./_data_/Binance_XMRUSDT_minute.csv", header=0)
+        df = df.head(1000)
         df = df[::-1]
         for close, unix, date in zip(df.close.values, df.unix.values, df.date.values):
             await self.publish(Agent.Trading_Agent, {

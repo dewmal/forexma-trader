@@ -32,6 +32,6 @@ class MarketStatusReadingAgent:
                 await self.client.start_websockets()
             except Exception as e:
                 log.error(e, e.args)
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(0.05)
 
         await self.client.close()

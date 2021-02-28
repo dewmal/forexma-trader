@@ -3,3 +3,4 @@ pandas
 cryptoxlib-aio
 scipy
 matplotlib
+talipp
