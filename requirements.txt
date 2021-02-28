@@ -2,3 +2,4 @@ numpy
 pandas
 cryptoxlib-aio
 scipy
+matplotlib

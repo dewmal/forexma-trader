@@ -2,15 +2,21 @@ name: ForexMATrader
 version: 1.0.0
 buildversion: 1
 agents:
+  trading_agent:
+    name: TradingAgent
+    code: agent/action/trading_agent.py
   highly_volatile_assets_select_agent:
     name: HighlyVolatileAssetsPickerAgent
     code: agent/analyser/highly_volatile_assets_select_agent.py
   pick_trading_assets_agent:
     name: PickTradingAssetAgent
     code: agent/analyser/pick_trading_assets_agent.py
-  market_status_reading_agent:
-    name: MarketStatusReadingAgent
-    code: agent/source_reader/market_status_reading_agent.py
+#  market_status_reading_agent:
+#    name: MarketStatusReadingAgent
+#    code: agent/source_reader/market_status_reading_agent.py
+  history_data_reading_agent:
+    name: HistoryDataReadingAgent
+    code: agent/source_reader/history_data_reading_agent.py
 #workdir: D:\Research\trading\forexma_trader
 communicationurl: 127.0.0.1:6379
 displayserverurl: 0.0.0.0:7979
