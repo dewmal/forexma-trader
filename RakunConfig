@@ -2,12 +2,9 @@ name: ForexMATrader
 version: 1.0.0
 buildversion: 1
 agents:
-  agent1:
-    name: Sample Agent One
-    code: agent/sample_agent_one.py
-  agent2:
-    name: Sample Agent Two,
-    code: agent/sample_agent_two.py
+  market_status_reading_agent:
+    name: MarketStatusReadingAgent
+    code: agent/source_reader/market_status_reading_agent.py
 #workdir: D:\Research\trading\forexma_trader
 communicationurl: 127.0.0.1:6379
 displayserverurl: 0.0.0.0:7979

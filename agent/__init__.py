@@ -1,3 +1,2 @@
 class Agent:
-    Agent_One = "AgentOne"
-    Agent_Two = "AgentTwo"
+    Market_Status_Reading_Agent = "MarketStatusReadingAgent"
