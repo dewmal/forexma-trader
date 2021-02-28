@@ -1,0 +1,15 @@
+name: ForexMATrader
+version: 1.0.0
+buildversion: 1
+agents:
+  agent1:
+    name: Sample Agent One
+    code: agent/sample_agent_one.py
+  agent2:
+    name: Sample Agent Two,
+    code: agent/sample_agent_two.py
+#workdir: D:\Research\trading\forexma_trader
+communicationurl: 127.0.0.1:6379
+displayserverurl: 0.0.0.0:7979
+requiredfiles:
+  - requirements.txt
