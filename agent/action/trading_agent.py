@@ -14,7 +14,11 @@ log = logging.getLogger(Agent.Trading_Agent)
 class TradingAgent:
     history_recodes = queue.Queue(240)
     active_order = None
+    last_profit = 0
     total_profit = 0
+    take_profit = 1
+    stop_loss = -10
+    wait_until_next = True
 
     def __init__(self, *args, **kwargs):
         self.ema50 = EMA(period=200, input_values=[])
@@ -64,8 +68,14 @@ class TradingAgent:
                 profit = message["close"] - self.active_order["price"]
                 profit_pv = profit * 100 / self.active_order["price"]
 
-                # Take profit
-                if profit_pv > 1 or profit_pv < -0.001:
+                if profit > self.last_profit:
+                    if profit_pv > self.take_profit:
+                        self.take_profit += 0.05
+
+                if self.take_profit <= profit_pv or profit_pv <= self.stop_loss:
                     self.active_order = None
                     self.total_profit += profit
-                    log.info(f"{message['date']} {self.total_profit=}")
+                    log.info(f"{message['date']} {self.total_profit=} {self.take_profit=}")
+                    self.take_profit = 1
+
+                self.last_profit = profit_pv
