@@ -1,8 +1,16 @@
-html, body {
-	font: 14px/1.21 'Helvetica Neue', arial, sans-serif;
-	font-weight: 400;
-}
+/* purgecss start ignore */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+/* purgecss end ignore */
 
-h1 {
-	text-align: center;
-}
+/** 
+ *  base styles go here
+ *  ------------------------------------------------------------------------------------
+ */
+
+/** 
+ *  ------------------------------------------------------------------------------------
+ *  end base styles
+ */
+
+@import 'tailwindcss/utilities';
