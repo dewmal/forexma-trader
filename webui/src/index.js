@@ -1,11 +1,14 @@
 import DashboardPage from './app/pages/DashbaordPage';
 import './style';
+import { observer } from "mobx-react-lite"
 
 
-export default function App() {
-
+const App = observer(() => {
 	return (
 		<DashboardPage />
 	);
-}
+});
+
+export default App;
+
 
