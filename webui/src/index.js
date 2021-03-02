@@ -1,13 +1,16 @@
-import DashboardPage from './app/pages/DashbaordPage';
+import { DashboardPage } from './app/pages/DashbaordPage';
 import './style';
-import { observer } from "mobx-react-lite"
+import DashboardPageUiContext, { DashbboardPageUiState } from './app/stores/ui/DashboardPageUiState';
 
 
-const App = observer(() => {
+
+const App = () => {
 	return (
-		<DashboardPage />
+		<DashboardPageUiContext.Provider value={new DashbboardPageUiState()}>
+			<DashboardPage />
+		</DashboardPageUiContext.Provider>
 	);
-});
+};
 
 export default App;
 

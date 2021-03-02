@@ -1,17 +1,21 @@
-import ProfitView from '../components/profitView'
-const DashboardPage = () => {
-
+import { observer } from 'mobx-react-lite';
+import { useContext } from 'preact/hooks';
+import DashboardPageUiContext from '../stores/ui/DashboardPageUiState';
+export const DashboardPage = observer(() => {
+    const store = useContext(DashboardPageUiContext);
     return (
         <>
-
             <h1>
                 Dashboard View
-        </h1>
+            </h1>
 
-            <ProfitView />
+            <h2>
+                {store.currentTime}
+            </h2>
+
+            {/* <ProfitView /> */}
 
         </>
     );
-}
+});
 
-export default DashboardPage;
