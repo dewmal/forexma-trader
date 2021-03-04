@@ -2,14 +2,14 @@ import {
     createContext
 } from "preact";
 import {
-    DashbboardPageUiState
+    DashboardPageUiState
 } from "./ui/DashboardPageUiState";
 
 
 export const globalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-    const uiStore = new DashbboardPageUiState();
+    const uiStore = new DashboardPageUiState();
 
     return (
         <globalContext.Provider value={{ uiStore }}>

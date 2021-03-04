@@ -4,7 +4,7 @@ import {
 import moment from "moment";
 import io from "socket.io-client";
 
-export class DashbboardPageUiState {
+export class DashboardPageUiState {
 
     currentTime;
     marketStatus = {
@@ -36,6 +36,7 @@ export class DashbboardPageUiState {
             this.changeAssetPrice(newStatus)
         });
     }
+    
 
     changeAssetPrice(status) {
         this.marketStatus = status;
