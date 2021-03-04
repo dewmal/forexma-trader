@@ -4,3 +4,4 @@ cryptoxlib-aio
 scipy
 matplotlib
 talipp
+pydantic

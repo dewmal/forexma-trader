@@ -11,6 +11,9 @@ agents:
   pick_trading_assets_agent:
     name: PickTradingAssetAgent
     code: agent/analyser/pick_trading_assets_agent.py
+  technical_analyser_agent:
+    name: TechnicalAnalyserAgent
+    code: agent/analyser/technical_analyser_agent.py
 #  market_status_reading_agent:
 #    name: MarketStatusReadingAgent
 #    code: agent/source_reader/market_status_reading_agent.py

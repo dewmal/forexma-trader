@@ -10,7 +10,9 @@ def message_filter(message_type, param_name):
         async def wrapped(*args, **kwargs):
             try:
                 message = kwargs[param_name]
+                message = message_type.parse_obj(message)
                 if type(message) == message_type:
+                    kwargs[param_name] = message
                     return await func(*args, **kwargs)
             except Exception as e:
                 log.exception(e)
