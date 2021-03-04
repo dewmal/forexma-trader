@@ -13,6 +13,7 @@ export class DashbboardPageUiState {
         unix: null,
         asset: null
     };
+    historyRecords = [];
     socket;
 
     constructor() {
@@ -39,6 +40,7 @@ export class DashbboardPageUiState {
     changeAssetPrice(status) {
         this.marketStatus = status;
         this.currentTime = moment.now();
+        this.historyRecords = [...this.historyRecords, status];
     }
 
 

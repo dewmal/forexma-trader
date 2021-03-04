@@ -32,7 +32,8 @@
     "postcss": "^7",
     "preact": "^10.1.0",
     "preact-render-to-string": "^5.1.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "socket.io-client": "^2.4.0"
+    "rxjs": "^6.6.6",
+    "socket.io-client": "^2.4.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
