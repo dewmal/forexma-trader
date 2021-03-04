@@ -2,29 +2,45 @@ import {
     makeAutoObservable
 } from "mobx";
 import moment from "moment";
-import {
-    createContext
-} from "preact";
+import io from "socket.io-client";
 
 export class DashbboardPageUiState {
 
     currentTime;
-
+    marketStatus = {
+        close: 0,
+        date: null,
+        unix: null,
+        asset: null
+    };
+    socket;
 
     constructor() {
         makeAutoObservable(this);
-        this.updateTime();
+        this.startSocket();
+    }
+
+    startSocket() {
+        this.socket = io("ws://127.0.0.1:7979", {
+            transports: ["websocket"],
+            jsonp: true,
+            forceNew: true,
+        });
     }
 
 
-    updateTime() {
-        this.currentTime = moment.now()
-        setTimeout(() => {
-            this.updateTime()
-        }, 1000);
+    readSocket() {
+        this.socket.on("HistoryDataReadingAgent", (evt) => {
+            const newStatus = evt.body.message;
+            this.changeAssetPrice(newStatus)
+        });
     }
+
+    changeAssetPrice(status) {
+        this.marketStatus = status;
+        this.currentTime = moment.now();
+    }
+
 
 
 }
-const DashboardPageUiContext = createContext(new DashbboardPageUiState());
-export default DashboardPageUiContext;

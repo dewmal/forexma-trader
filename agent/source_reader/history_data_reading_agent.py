@@ -16,10 +16,13 @@ class HistoryDataReadingAgent:
         # df = df.head(10000)
         df = df[::-1]
         for close, unix, date in zip(df.close.values, df.unix.values, df.date.values):
-            await self.publish(Agent.Trading_Agent, {
+            data = {
                 "unix": unix,
                 "date": date,
-                "close": float(close),
+                "ask": float(close),
+                "bid": float(close),
                 "asset": "XMRUSDT"
-            })
-            await asyncio.sleep(0.0001)
+            }
+            await self.publish(Agent.Trading_Agent, data)
+            await self.display(data)
+            await asyncio.sleep(0.5)

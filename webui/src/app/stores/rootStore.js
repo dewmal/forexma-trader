@@ -5,13 +5,15 @@ import {
     DashbboardPageUiState
 } from "./ui/DashboardPageUiState";
 
-export class RootStore {
 
-    constructor() {
-        this.dashboardUiState = new DashbboardPageUiState(this);
-    }
+export const globalContext = createContext();
 
-}
+export const GlobalProvider = ({ children }) => {
+    const uiStore = new DashbboardPageUiState();
 
-
-export default createContext(new RootStore())
+    return (
+        <globalContext.Provider value={{ uiStore }}>
+            {children}
+        </globalContext.Provider>
+    );
+};

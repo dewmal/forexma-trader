@@ -1,14 +1,20 @@
+import "preact/debug"; // <-- Add this line at the top of your main entry file
 import { DashboardPage } from './app/pages/DashbaordPage';
 import './style';
-import DashboardPageUiContext, { DashbboardPageUiState } from './app/stores/ui/DashboardPageUiState';
+import { GlobalProvider } from "./app/stores/rootStore";
 
 
 
 const App = () => {
 	return (
-		<DashboardPageUiContext.Provider value={new DashbboardPageUiState()}>
+
+		<GlobalProvider>
 			<DashboardPage />
-		</DashboardPageUiContext.Provider>
+		</GlobalProvider>
+
+		// <DashboardPageUiContext.Provider value={defaultDashbboardPageUiState}>
+		// 	<DashboardPage />
+		// </DashboardPageUiContext.Provider>
 	);
 };
 
