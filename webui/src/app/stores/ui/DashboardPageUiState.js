@@ -44,6 +44,4 @@ export class DashboardPageUiState {
         this.historyRecords = [...this.historyRecords, status];
     }
 
-
-
 }
