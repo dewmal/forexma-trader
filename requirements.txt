@@ -5,3 +5,4 @@ scipy
 matplotlib
 talipp
 pydantic
+python-dateutil

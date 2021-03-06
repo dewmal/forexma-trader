@@ -1,11 +1,12 @@
 import asyncio
+import datetime
 import logging
 import pandas as pd
 
 from agent import Agent
 from dto import MarketStatus
 from helpers import error_log
-
+from dateutil.parser import *
 log = logging.getLogger(Agent.History_Data_Reading_Agent)
 
 
@@ -23,7 +24,8 @@ class HistoryDataReadingAgent:
                                                       df.date.values):
             status = MarketStatus(
                 unix=unix,
-                date=date,
+                # date=datetime.datetime.strptime(date, '%d/%m/%Y %H:%M').timestamp(),
+                date=parse(date, dayfirst=True).timestamp(),
                 ask=float(close),
                 bid=float(close),
                 open=float(open),
