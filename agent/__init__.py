@@ -5,3 +5,7 @@ class Agent:
     History_Data_Reading_Agent = "HistoryDataReadingAgent"
     Trading_Agent = "TradingAgent"
     Technical_Analyser_Agent = "TechnicalAnalyserAgent"
+    Pair_Market_Status_Reading_Agent = "PairMarketStatusReadingAgent"
+    # Trend Analysing Agents
+    ## Candlestick analysing agents
+    CandleStickAnalysing_Agent = "TradingAgent"

@@ -4,6 +4,7 @@ from pydantic.class_validators import validator
 
 class MarketStatus(BaseModel):
     asset: str
+    interval: str
     unix: int
     date: int
     open: float
@@ -33,5 +34,3 @@ class Order(BaseModel):
     id: str
     unix: int
     date: int
-    
-    

@@ -17,9 +17,12 @@ agents:
 #  market_status_reading_agent:
 #    name: MarketStatusReadingAgent
 #    code: agent/source_reader/market_status_reading_agent.py
-  history_data_reading_agent:
-    name: HistoryDataReadingAgent
-    code: agent/source_reader/history_data_reading_agent.py
+# history_data_reading_agent:
+#   name: HistoryDataReadingAgent
+#   code: agent/source_reader/history_data_reading_agent.py
+  pair_market_status_reading_agent:
+    name: PairMarketStatusReadingAgent
+    code: agent/source_reader/pair_market_status_reading_agent.py
 #workdir: D:\Research\trading\forexma_trader
 communicationurl: 127.0.0.1:6379
 displayserverurl: 0.0.0.0:7979
